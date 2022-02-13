@@ -1,4 +1,5 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { app } from './plugins/main-app'
+import './plugins/quasar'
+import './plugins/pinia'
 
-createApp(App).mount('#app')
+app.mount('#app')
