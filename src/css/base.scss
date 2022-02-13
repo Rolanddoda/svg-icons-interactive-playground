@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #202124;
+  color: white;
+}
+
+html, body, #app {
+  height: 100%;
+}
+
+#app {
+  padding: 24px;
+  overflow: auto;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+}
+
+/* Reusable classes */
+
+.gradient-font {
+  font-weight: bold;
+  background: linear-gradient(315deg, #42d392 25%, #647eff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-size: clamp(1.5rem, 9vw - 2rem, 5rem);
+}
