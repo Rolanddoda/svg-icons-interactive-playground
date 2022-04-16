@@ -5,7 +5,7 @@ const globalStore = useGlobalStore()
 </script>
 
 <template>
-  <div class="controls relative-position q-pa-xl">
+  <div class="controls gradient-border relative-position q-pa-xl">
     <h4 class="h4 text-indigo-3 text-center">Controls</h4>
 
     <AppSelect label="Icon" v-model="globalStore.selectedIcon" :options="globalStore.availableIcons" />

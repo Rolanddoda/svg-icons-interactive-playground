@@ -39,3 +39,28 @@ html, body, #app {
   text-align: center;
   font-size: clamp(1.5rem, 9vw - 2rem, 5rem);
 }
+
+.gradient-border {
+  border-radius: 12px;
+  box-shadow: 0 0 5px;
+  padding: 32px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 3px;
+    background: linear-gradient(
+                    45deg,
+                    var(--q-secondary),
+                    var(--q-positive),
+                    var(--q-negative),
+                    var(--q-info),
+                    var(--q-warning)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}

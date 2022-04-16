@@ -61,14 +61,18 @@ export default {
 </script>
 
 <template>
-  <component
-    :is="dynamicComponent"
-    class="svg-icon"
-    :width="svgSize"
-    :height="svgSize"
-    :stroke-width="strokeWidth"
-    :class="{ 'add-hover': !!hoverColorBind }"
-  />
+  <Suspense>
+    <component
+      :is="dynamicComponent"
+      class="svg-icon"
+      :width="svgSize"
+      :height="svgSize"
+      :stroke-width="strokeWidth"
+      :class="{ 'add-hover': !!hoverColorBind }"
+    />
+
+    <template #fallback> <q-spinner :size="svgSize" /> </template>
+  </Suspense>
 </template>
 
 <style lang="scss" scoped>
