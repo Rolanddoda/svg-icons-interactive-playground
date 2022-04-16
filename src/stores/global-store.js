@@ -1,4 +1,4 @@
-import { reactive, ref } from 'vue'
+import { reactive, ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useGlobalStore = defineStore('global-store', () => {
@@ -22,6 +22,31 @@ export const useGlobalStore = defineStore('global-store', () => {
     warning: '#ffc107'
   })
 
+  const generatedCode = computed(() => {
+    let code = '<svg-icon'
+    code += `\n name="${selectedIcon.value}"`
+
+    if (selectedSize.value !== 'xl') {
+      code += `\n size="${selectedSize.value}"`
+    }
+
+    if (color.value) {
+      code += `\n color="${color.value}"`
+    }
+
+    if (hasHoverColor.value) {
+      if (!hoverColor.value) {
+        code += `\n hover-color`
+      } else {
+        code += `\n hover-color="${hoverColor.value}"`
+      }
+    }
+
+    code += `\n/>`
+
+    return code
+  })
+
   return {
     availableIcons,
     selectedIcon,
@@ -30,6 +55,7 @@ export const useGlobalStore = defineStore('global-store', () => {
     hoverColor,
     availableSizes,
     selectedSize,
-    cssVarColors
+    cssVarColors,
+    generatedCode
   }
 })

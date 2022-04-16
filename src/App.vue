@@ -1,6 +1,7 @@
 <script setup>
 import { useGlobalStore } from '@/stores/global-store'
 // Components
+import CodeSnippet from '@/components/CodeSnippet.vue'
 import ResultSection from '@/components/ResultSection.vue'
 import ControlsSection from '@/components/ControlsSection.vue'
 
@@ -14,6 +15,7 @@ const globalStore = useGlobalStore()
 
   <main class="">
     <ResultSection />
+    <CodeSnippet />
     <ControlsSection />
   </main>
 </template>
