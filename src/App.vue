@@ -1,5 +1,8 @@
 <script setup>
 import { useGlobalStore } from '@/stores/global-store'
+// Components
+import ResultSection from '@/components/ResultSection.vue'
+import ControlsSection from '@/components/ControlsSection.vue'
 
 const globalStore = useGlobalStore()
 </script>
@@ -10,7 +13,8 @@ const globalStore = useGlobalStore()
   </header>
 
   <main class="">
-    <svg-icon name="user" />
+    <ResultSection />
+    <ControlsSection />
   </main>
 </template>
 
